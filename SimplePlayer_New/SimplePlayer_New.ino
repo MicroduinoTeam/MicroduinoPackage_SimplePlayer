@@ -1,10 +1,12 @@
-/*
+/***************************************************************
    Microduino_开源音乐播放器示例程序
    套件WIKI地址：https://wiki.microduino.cn/index.php/%E5%BC%80%E6%BA%90%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/zh
    功能：简易的MP3，使用Microduino_AudioPro、Microduino_SD模块、Sensor Joystick传感器、OLED屏等，详细清单见维基界面
    本例程适配新版 Arduino IDE 1.6.9 for Microduino
-   更新时间：2017-08-03   by CWJ
-*/
+
+****************************************************************   
+   更新时间：2017-08-03 
+****************************************************************/
 
 #include <Microduino_Key.h>      //按键库
 #include <Microduino_AudioPro.h> //AudioPro库
@@ -30,7 +32,7 @@ uint32_t oledTimer = millis();
 
 //**********播放第num号音乐
 void playNum(uint8_t num) {
-  if (!musicPlayer.paused() || !musicPlayer.stopped()) {
+  if (!musicPlayer.stopped()) {
     musicPlayer.stopPlaying();  //必要，否则SD类得不到关闭，内存溢出
   }
 
